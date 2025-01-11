@@ -17,4 +17,5 @@ urlpatterns = [
   path('create_post/', create_post),
   path('get_posts/', get_posts),
   path('search/', search_users),
+  path('update_user/', update_user_details),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

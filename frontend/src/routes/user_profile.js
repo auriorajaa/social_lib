@@ -1,13 +1,13 @@
-import { 
-  Box, 
+import {
+  Box,
   Container,
-  Flex, 
-  Heading, 
-  HStack, 
-  Text, 
-  VStack, 
-  Image, 
-  Button, 
+  Flex,
+  Heading,
+  HStack,
+  Text,
+  VStack,
+  Image,
+  Button,
   Grid,
   useColorModeValue,
   Skeleton,
@@ -22,6 +22,7 @@ import { SERVER_URL } from "../constants/constants"
 import { IoPersonAddOutline, IoPersonRemoveOutline } from "react-icons/io5"
 import { FaRegEdit, FaUsers, FaUserFriends } from "react-icons/fa"
 import Post from "../components/post"
+import { useNavigate } from "react-router-dom"
 
 const UserProfile = () => {
   const get_username_from_url = () => {
@@ -46,6 +47,7 @@ const UserProfile = () => {
 }
 
 const UserDetails = ({ username }) => {
+  const navigate = useNavigate()
   const [loading, setLoading] = useState(true)
   const [bio, setBio] = useState('')
   const [profileImage, setProfileImage] = useState('')
@@ -69,6 +71,10 @@ const UserDetails = ({ username }) => {
     }
   }
 
+  const handleEditProfile = () => {
+    navigate('/settings')
+  }
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -89,16 +95,16 @@ const UserDetails = ({ username }) => {
   }, [])
 
   return (
-    <Box 
-      w="100%" 
-      bg={bgColor} 
+    <Box
+      w="100%"
+      bg={bgColor}
       borderRadius="xl"
       borderWidth="1px"
       borderColor={borderColor}
       p={{ base: 4, md: 6 }}
     >
-      <Flex 
-        direction={{ base: "column", md: "row" }} 
+      <Flex
+        direction={{ base: "column", md: "row" }}
         gap={{ base: 6, md: 8 }}
         align={{ base: "center", md: "start" }}
       >
@@ -124,16 +130,16 @@ const UserDetails = ({ username }) => {
         )}
 
         {/* User Info */}
-        <VStack 
-          align={{ base: "center", md: "start" }} 
-          spacing={4} 
+        <VStack
+          align={{ base: "center", md: "start" }}
+          spacing={4}
           flex={1}
           w="100%"
         >
           <Heading size="lg">@{username}</Heading>
 
           {/* Stats */}
-          <HStack 
+          <HStack
             spacing={{ base: 8, md: 12 }}
             justify={{ base: "center", md: "start" }}
             w="100%"
@@ -160,8 +166,8 @@ const UserDetails = ({ username }) => {
           </HStack>
 
           {/* Bio */}
-          <Text 
-            color="gray.600" 
+          <Text
+            color="gray.600"
             textAlign={{ base: "center", md: "left" }}
             w="100%"
           >
@@ -172,13 +178,13 @@ const UserDetails = ({ username }) => {
           {!loading && (
             <Button
               leftIcon={
-                isOurProfile ? 
-                  <FaRegEdit size="16px" /> : 
-                  following ? 
-                    <IoPersonRemoveOutline size="16px" /> : 
+                isOurProfile ?
+                  <FaRegEdit size="16px" /> :
+                  following ?
+                    <IoPersonRemoveOutline size="16px" /> :
                     <IoPersonAddOutline size="16px" />
               }
-              onClick={isOurProfile ? undefined : handleToggleFollow}
+              onClick={isOurProfile ? handleEditProfile : handleToggleFollow}
               colorScheme={isOurProfile ? "gray" : "purple"}
               size="md"
               fontSize='md'
@@ -227,7 +233,7 @@ const UserPosts = ({ username }) => {
   return (
     <VStack width="100%" spacing={6}>
       <Heading size="md" alignSelf="start">Posts</Heading>
-      
+
       {loading ? (
         <Grid
           templateColumns={{ base: "1fr", md: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }}
