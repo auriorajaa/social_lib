@@ -16,6 +16,7 @@ While it focuses on simplicity, Social Lib does not include features like image 
 ![screencapture-localhost-3000-2025-01-12-10_22_55](https://github.com/user-attachments/assets/d70e89f7-dce4-4ee8-9473-e2921a1023b9)
 ![screencapture-localhost-3000-aurioking-2025-01-12-10_23_11](https://github.com/user-attachments/assets/baaae1d6-57b1-4022-a854-f53b04bf13e2)
 ![screencapture-localhost-3000-auriorajaa-2025-01-12-10_23_27](https://github.com/user-attachments/assets/4d027d63-ca2c-4afb-8d8d-2c0e0675acc1)
+![screencapture-localhost-3000-search-2025-01-11-21_22_11](https://github.com/user-attachments/assets/f396a94e-0a49-4c49-9e72-dfb06dab355c)
 ![screencapture-localhost-3000-settings-2025-01-11-21_23_31](https://github.com/user-attachments/assets/c5ae6beb-970a-4bd4-9e12-08a69216332c)
 ![screencapture-localhost-3000-settings-2025-01-11-21_23_41](https://github.com/user-attachments/assets/7b6162d4-06c3-4098-980b-22c210a36ad8)
 ![screencapture-localhost-3000-settings-2025-01-11-21_23_48](https://github.com/user-attachments/assets/5054855a-ffed-46df-b096-07135ed1a659)
